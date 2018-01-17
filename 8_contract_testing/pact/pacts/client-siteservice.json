@@ -1,0 +1,33 @@
+{
+  "consumer": {
+    "name": "client"
+  },
+  "provider": {
+    "name": "siteService"
+  },
+  "interactions": [
+    {
+      "description": "a request to retrieve site list",
+      "providerState": "it has one site",
+      "request": {
+        "method": "GET",
+        "path": "/sites"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": [
+          {
+            "title": "Foo"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

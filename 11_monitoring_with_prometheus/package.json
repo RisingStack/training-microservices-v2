@@ -1,0 +1,15 @@
+{
+  "name": "example-prometheus-monitoring",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Setup monitoring with Prometheus and Grafana",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RisingStack, Inc.",
+  "dependencies": {
+    "express": "4.15.3",
+    "prom-client": "9.1.0"
+  }
+}

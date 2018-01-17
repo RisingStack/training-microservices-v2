@@ -1,0 +1,45 @@
+I, [2017-12-01T14:50:54.531835 #22307]  INFO -- : Registered expected interaction GET /sites
+D, [2017-12-01T14:50:54.532039 #22307] DEBUG -- : {
+  "description": "a request to retrieve site list",
+  "providerState": "it has one site",
+  "request": {
+    "method": "GET",
+    "path": "/sites"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": [
+      {
+        "title": "Foo"
+      }
+    ]
+  }
+}
+I, [2017-12-01T14:50:54.541175 #22307]  INFO -- : Received request GET /sites
+D, [2017-12-01T14:50:54.541253 #22307] DEBUG -- : {
+  "path": "/sites",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2017-12-01T14:50:54.541416 #22307]  INFO -- : Found matching response for GET /sites
+D, [2017-12-01T14:50:54.541474 #22307] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": [
+    {
+      "title": "Foo"
+    }
+  ]
+}
+I, [2017-12-01T14:50:54.550966 #22307]  INFO -- : Verifying - interactions matched for example ""
+I, [2017-12-01T14:50:54.554106 #22307]  INFO -- : Writing pact with details {:pactfile_write_mode=>"overwrite", :consumer=>{:name=>"client"}, :provider=>{:name=>"siteService"}}
+I, [2017-12-01T14:50:54.554187 #22307]  INFO -- : Writing pact for siteService to /Users/tamaskadlecsik/Projects/training/training-microservices/examples/pact/pacts/client-siteservice.json
+I, [2017-12-01T14:50:54.557497 #22307]  INFO -- : Cleared interactions before example ""
