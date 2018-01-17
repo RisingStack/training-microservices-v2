@@ -1,0 +1,100 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Company {
+*id
+---
+*name
+*payment_type [Stripe|PayPal|CreditCard]
+*plan_valid_until
+credit_card_info
+stripe_id
+paypal_id
+}
+
+
+entity User {
+*id
+---
+*name
+*password
+*email
+*role [Owner|User]
+}
+
+entity Vehicle {
+*id
+---
+*manufacturer
+*model
+*fuel_type
+*img_location
+*weight
+*date_of_production
+*license_plate
+}
+
+entity Device {
+*id
+}
+
+entity DeviceMetrics {
+*id
+---
+*position
+*speed
+*throttle
+*fuel_level
+*is_ignition_on
+*distance_travelled
+*timestamp
+}
+
+entity Report {
+*id
+---
+*timestamp
+*mileage
+*fuel_economy
+*distance_travelled
+}
+
+entity PaymentEvents {
+*eventJSON
+}
+
+entity Plan {
+*id
+---
+*name
+*price
+*payment_interval
+*data_retention
+}
+
+entity Command {
+*id
+---
+*timestamp
+*command
+}
+
+Company ||--|{ User
+
+Plan ||--|{ Company
+
+Company ||--o{ PaymentEvents
+
+User ||--|{ Vehicle
+
+Vehicle ||--|{ Device
+
+Vehicle ||--o{ Report
+
+Device ||--o{ DeviceMetrics
+
+Device ||--o{ Command
+
+@enduml

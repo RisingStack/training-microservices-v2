@@ -1,0 +1,19 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Notification {
+*id
+---
+*target
+*timestamp
+}
+
+entity Account {
+*id (AccountService)
+}
+
+Notification ||--o{ Account
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Vehicle {
+*id (VehicleService)
+}
+
+entity Device {
+*id
+}
+
+entity Command {
+*id
+---
+*timestamp
+*command
+}
+
+Vehicle ||--|{ Device
+
+Device ||--o{ Command
+
+@enduml

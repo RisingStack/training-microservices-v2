@@ -1,0 +1,29 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Company {
+*id (CompanyService)
+}
+
+entity Driver {
+*id
+---
+*name
+*password
+*email
+*distance_travelled
+*cargo_shipped
+*current_cargo
+}
+
+entity Vehicle {
+*id (VehicleService)
+}
+
+Company }|--|{ Driver
+
+Driver ||--|{ Vehicle
+
+@enduml

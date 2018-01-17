@@ -1,0 +1,51 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Vehicle {
+*id
+*owner_id (AccountService)
+*driver_id (AccountService)
+---
+*manufacturer
+*model
+*fuel_type
+*img_location
+*weight
+*date_of_production
+*license_plate
+}
+
+entity Device {
+*id
+}
+
+entity DeviceMetrics {
+*id
+---
+*position
+*speed
+*throttle
+*fuel_level
+*is_ignition_on
+*distance_travelled
+*timestamp
+}
+
+entity Report {
+*id
+---
+*timestamp
+*mileage
+*fuel_economy
+*distance_travelled
+}
+
+Vehicle ||--|{ Device
+
+Vehicle ||--o{ Report
+
+Device ||--o{ DeviceMetrics
+
+@enduml

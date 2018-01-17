@@ -1,0 +1,33 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Account {
+*id (AccountService)
+---
+*payment_type [Stripe|PayPal|CreditCard]
+*plan_valid_until
+credit_card_info
+stripe_id
+paypal_id
+}
+
+entity PaymentEvents {
+*eventJSON
+}
+
+entity Plan {
+*id
+---
+*name
+*price
+*payment_interval
+*data_retention
+}
+
+Account ||--|| Plan
+
+Account ||--o{ PaymentEvents
+
+@enduml

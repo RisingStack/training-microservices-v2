@@ -1,0 +1,22 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Company {
+*id (CompanyService)
+}
+
+
+entity Owner {
+*id
+---
+*name
+*password
+*email
+}
+
+
+Company ||--|{ Owner
+
+@enduml

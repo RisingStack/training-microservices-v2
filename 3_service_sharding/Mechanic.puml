@@ -1,0 +1,38 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Company {
+*id (CompanyService)
+}
+
+entity Mechanic {
+*id
+---
+*name
+*password
+*email
+}
+
+entity MaintenanceTask {
+*id
+---
+*name
+due_date
+completion_date
+}
+
+entity Vehicle {
+*id (VehicleService)
+}
+
+Company }|--|{ Mechanic
+
+Mechanic ||--|{ Vehicle
+
+Mechanic ||--|{ MaintenanceTask
+
+MaintenanceTask ||--|{ Vehicle
+
+@enduml

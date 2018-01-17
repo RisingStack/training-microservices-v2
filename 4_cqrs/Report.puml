@@ -1,0 +1,21 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity Vehicle {
+*id (VehicleService)
+}
+
+entity Report {
+*id
+---
+*timestamp
+*mileage
+*fuel_economy
+*distance_travelled
+}
+
+Vehicle ||--o{ Report
+
+@enduml
