@@ -23,11 +23,13 @@ Setup monitoring with [Prometheus](https://prometheus.io) and [Grafana](https://
 
 Unix:
 ```sh
-docker run -p 9090:9090 -v $(pwd)/prometheus-data:/prometheus-data prom/prometheus -config.file=/prometheus-data/prometheus.yml
+cd 11_monitoring_with_prometheus/
+docker run -p 9090:9090 -v $(pwd)/prometheus-data:/prometheus-data prom/prometheus --config.file=/prometheus-data/prometheus.yml
 ```
 Windows:
 ```sh
-docker run -p 9090:9090 -v "$pwd/prometheus-data:/prometheus-data prom/prometheus" -config.file=/prometheus-data/prometheus.yml
+cd 11_monitoring_with_prometheus/
+docker run -p 9090:9090 -v "$pwd/prometheus-data:/prometheus-data prom/prometheus" --config.file=/prometheus-data/prometheus.yml
 ```
 
 Host machine IP address:

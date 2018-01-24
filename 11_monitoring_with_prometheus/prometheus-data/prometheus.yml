@@ -8,4 +8,4 @@ scrape_configs:
           service: 'my-service'
           group: 'production'
 rule_files:
-  - 'alert.rules'
+  - 'alert.yml'
