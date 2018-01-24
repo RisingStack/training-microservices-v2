@@ -26,7 +26,7 @@ entity Plan {
 *data_retention
 }
 
-Account ||--|| Plan
+Plan ||--o{ Account
 
 Account ||--o{ PaymentEvents
 

@@ -11,7 +11,7 @@ const HEALTH_TIMEOUT = 1000
 
 app.get('/healthz', (req, res) => {
   promiseTimeout(redis.ping(), HEALTH_TIMEOUT)
-    .then(() => promiseTimeout(redis.ping(), HEALTH_TIMEOUT))
+    .then(() => promiseTimeout(redis2.ping(), HEALTH_TIMEOUT))
     .then(() => res.json({ status: 'ok' }))
     .catch((err) => {
       console.error('Healthcheck error', err)
