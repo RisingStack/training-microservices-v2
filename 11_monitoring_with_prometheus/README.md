@@ -24,18 +24,18 @@ Setup monitoring with [Prometheus](https://prometheus.io) and [Grafana](https://
 Unix:
 ```sh
 cd 11_monitoring_with_prometheus/
-docker run -p 9090:9090 -v $(pwd)/prometheus-data:/prometheus-data prom/prometheus --config.file=/prometheus-data/prometheus.yml
+docker run -p 9090:9090 -v $(pwd)/prometheus-data:/prometheus-data prom/prometheus --web.enable-lifecycle --config.file=/prometheus-data/prometheus.yml
 ```
 Windows:
 ```sh
 cd 11_monitoring_with_prometheus/
-docker run -p 9090:9090 -v "$pwd/prometheus-data:/prometheus-data prom/prometheus" --config.file=/prometheus-data/prometheus.yml
+docker run -p 9090:9090 -v "$pwd/prometheus-data:/prometheus-data prom/prometheus" --web.enable-lifecycle --config.file=/prometheus-data/prometheus.yml
 ```
 
 Host machine IP address:
 UNIX: `ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'`
 Windows: `docker-machine ip`
-Modify: `/prometheus-data/prometheus.yml`, replace `192.168.0.10` with your own host machine's IP.
+Modify: `/prometheus-data/prometheus.yml`, replace the value of `targets` with your own host machine's IP. Make sure you keep the port!
 
 Necessary when you modified prometheus-data.
 
