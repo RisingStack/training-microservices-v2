@@ -21,18 +21,6 @@ entity Device {
 *id
 }
 
-entity DeviceMetrics {
-*id
----
-*position
-*speed
-*throttle
-*fuel_level
-*is_ignition_on
-*distance_travelled
-*timestamp
-}
-
 entity Report {
 *id
 ---
@@ -45,7 +33,5 @@ entity Report {
 Vehicle ||--|{ Device
 
 Vehicle ||--o{ Report
-
-Device ||--o{ DeviceMetrics
 
 @enduml

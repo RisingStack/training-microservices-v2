@@ -7,6 +7,10 @@ entity Vehicle {
 *id (VehicleService)
 }
 
+entity Device {
+*id
+}
+
 entity Report {
 *id
 ---
@@ -17,5 +21,5 @@ entity Report {
 }
 
 Vehicle ||--o{ Report
-
+Vehicle ||--|{ Device
 @enduml
